@@ -1,0 +1,62 @@
+Funcionalidade: Configuração de produto no EBAC-SHOP
+  Como cliente da EBAC-SHOP
+  Quero configurar meu produto de acordo com meu tamanho e gosto
+  E escolher a quantidade
+  Para depois inserir no carrinho
+
+  Cenário: Configurar produto e adicionar ao carrinho
+    Dado que estou na página de um produto
+    Quando seleciono a cor
+    E seleciono o tamanho
+    E escolho a quantidade
+    Então o botão "Adicionar ao carrinho" deve estar habilitado
+
+  Cenário: Limite máximo de produtos
+    Dado que estou configurando um produto
+    Quando seleciono uma quantidade maior que 10
+    Então deve exibir uma mensagem de erro
+    E não deve permitir adicionar ao carrinho
+
+  Cenário: Botão limpar
+    Dado que já configurei cor, tamanho e quantidade
+    Quando clico no botão "Limpar"
+    Então todas as seleções devem voltar ao estado original
+
+Funcionalidade: Limite de quantidade de produtos
+  Como cliente da EBAC-SHOP
+  Quero configurar a quantidade de produtos
+  Para garantir que não ultrapasse o limite permitido
+
+  Esquema do Cenário: Validação da quantidade de produtos
+    Dado que estou na página de um produto
+    Quando seleciono a quantidade <quantidade>
+    Então o sistema deve exibir <mensagem>
+
+    Exemplos:
+      | quantidade | mensagem                          |
+      | 1          | "Produto adicionado ao carrinho"  |
+      | 5          | "Produto adicionado ao carrinho"  |
+      | 10         | "Produto adicionado ao carrinho"  |
+      | 11         | "Quantidade máxima permitida é 10"|
+      | 15         | "Quantidade máxima permitida é 10"|
+
+
+Funcionalidade: Botão Limpar
+  Como cliente da EBAC-SHOP
+  Quero poder limpar minhas seleções
+  Para voltar ao estado inicial do produto
+
+  Esquema do Cenário: Restaurar estado original ao clicar em "Limpar"
+    Dado que configurei o produto com cor <cor>, tamanho <tamanho> e quantidade <quantidade>
+    Quando clico no botão "Limpar"
+    Então todas as seleções devem voltar ao estado original
+    E o campo de quantidade deve estar vazio ou zerado
+    E o botão "Adicionar ao carrinho" deve estar desabilitado
+
+    Exemplos:
+      | cor     | tamanho | quantidade |
+      | Azul    | M       | 2          |
+      | Vermelho| G       | 5          |
+      | Preto   | P       | 1          |
+      | Verde   | GG      | 10         |
+
