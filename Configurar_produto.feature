@@ -1,14 +1,11 @@
 Funcionalidade: Configuração de produto no EBAC-SHOP
   Como cliente da EBAC-SHOP
-  Quero configurar meu produto de acordo com meu tamanho e gosto
-  E escolher a quantidade
+  Quero configurar meu produto de acordo com meu tamanho, meu gosto e escolher a quantidade
   Para depois inserir no carrinho
 
   Cenário: Configurar produto e adicionar ao carrinho
     Dado que estou na página de um produto
-    Quando seleciono a cor
-    E seleciono o tamanho
-    E escolho a quantidade
+    Quando seleciono a cor, o tamanho, e a quantidade
     Então o botão "Adicionar ao carrinho" deve estar habilitado
 
   Cenário: Limite máximo de produtos
@@ -21,11 +18,6 @@ Funcionalidade: Configuração de produto no EBAC-SHOP
     Dado que já configurei cor, tamanho e quantidade
     Quando clico no botão "Limpar"
     Então todas as seleções devem voltar ao estado original
-
-Funcionalidade: Limite de quantidade de produtos
-  Como cliente da EBAC-SHOP
-  Quero configurar a quantidade de produtos
-  Para garantir que não ultrapasse o limite permitido
 
   Esquema do Cenário: Validação da quantidade de produtos
     Dado que estou na página de um produto
@@ -41,17 +33,10 @@ Funcionalidade: Limite de quantidade de produtos
       | 15         | "Quantidade máxima permitida é 10"|
 
 
-Funcionalidade: Botão Limpar
-  Como cliente da EBAC-SHOP
-  Quero poder limpar minhas seleções
-  Para voltar ao estado inicial do produto
-
   Esquema do Cenário: Restaurar estado original ao clicar em "Limpar"
     Dado que configurei o produto com cor <cor>, tamanho <tamanho> e quantidade <quantidade>
     Quando clico no botão "Limpar"
-    Então todas as seleções devem voltar ao estado original
-    E o campo de quantidade deve estar vazio ou zerado
-    E o botão "Adicionar ao carrinho" deve estar desabilitado
+    Então todas as seleções devem voltar ao estado original, o campo de <quantidade> deve estar vazio ou zerado,  o botão "Adicionar ao carrinho" deve estar desabilitado
 
     Exemplos:
       | cor     | tamanho | quantidade |
