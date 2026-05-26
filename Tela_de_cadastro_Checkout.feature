@@ -5,10 +5,7 @@ Funcionalidade: Tela de cadastro - Checkout
 
   Esquema do Cenário: Validação do cadastro no checkout
     Dado que estou na tela de cadastro
-    Quando insiro o nome <nome>
-    E insiro o e-mail <email>
-    E insiro o endereço <endereco>
-    E insiro o telefone <telefone>
+    Quando insiro o nome <nome>, o e-mail <email>, o endereço <endereco>,e o telefone <telefone>
     Então o sistema deve exibir <mensagem>
 
     Exemplos:

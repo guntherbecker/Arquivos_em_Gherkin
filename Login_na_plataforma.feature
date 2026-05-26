@@ -5,14 +5,12 @@ Funcionalidade: Login na plataforma
 
   Cenário: Login com dados válidos
     Dado que estou na página de login
-    Quando insiro o usuário "cliente@ebac.com"
-    E insiro a senha "senhaValida123"
+    Quando insiro o usuário "cliente@ebac.com", e insiro a senha "senhaValida123"
     Então devo ser direcionado para a tela de checkout
 
   Esquema do Cenário: Login com dados inválidos
     Dado que estou na página de login
-    Quando insiro o usuário <usuario>
-    E insiro a senha <senha>
+    Quando insiro o usuário <usuario>, e a senha <senha>
     Então deve exibir a mensagem de alerta "Usuário ou senha inválidos"
 
     Exemplos:
