@@ -19,11 +19,6 @@ Funcionalidade: Configuração de produto no EBAC-SHOP
     Quando clico no botão "Limpar"
     Então todas as seleções devem voltar ao estado original
 
-Funcionalidade: Limite de quantidade de produtos
-  Como cliente da EBAC-SHOP
-  Quero configurar a quantidade de produtos
-  Para garantir que não ultrapasse o limite permitido
-
   Esquema do Cenário: Validação da quantidade de produtos
     Dado que estou na página de um produto
     Quando seleciono a quantidade <quantidade>
@@ -37,11 +32,6 @@ Funcionalidade: Limite de quantidade de produtos
       | 11         | "Quantidade máxima permitida é 10"|
       | 15         | "Quantidade máxima permitida é 10"|
 
-
-Funcionalidade: Botão Limpar
-  Como cliente da EBAC-SHOP
-  Quero poder limpar minhas seleções
-  Para voltar ao estado inicial do produto
 
   Esquema do Cenário: Restaurar estado original ao clicar em "Limpar"
     Dado que configurei o produto com cor <cor>, tamanho <tamanho> e quantidade <quantidade>
